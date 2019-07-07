@@ -21,17 +21,3 @@
         "node_modules"
     ]
 }
-
-// "module": "commonjs",
-// "esModuleInterop": true,
-// "listEmittedFiles": true,
-// "sourceMap": false,
-// "declarationMap": false,
-// "declaration": true,
-// "emitDecoratorMetadata": true,
-// "experimentalDecorators": true,
-// "suppressImplicitAnyIndexErrors": true,
-// "noImplicitAny": false,
-// "noImplicitThis": false,
-// "moduleResolution": "node",
-// "outDir": "bin"
