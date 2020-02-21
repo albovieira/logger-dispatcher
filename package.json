@@ -1,16 +1,32 @@
 {
   "name": "logger-dispatcher",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "This is an abstraction for winston logger, with this package we can just inform the transporter and it will provide a winston instance configured",
   "main": "index.js",
   "scripts": {
     "build": "tsc && node setup.js",
-    "dist": "npm run build && cd dist && npm publish",
+    "dist": "rm dist -rf && npm run build && cd dist && npm publish",
     "test:unit": "mocha -b -w --recursive --require ts-node/register --watch-extensions ts \"tests/unit/setup.ts\"",
     "test:unit:pipeline": "mocha -b --require ts-node/register --watch-extensions ts \"tests/unit/setup.ts\""
   },
   "author": "Albo Vieira",
   "license": "MIT",
+  "homepage": "https://github.com/albovieira/logger-dispatcher#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albovieira/logger-dispatcher.git"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "winston",
+    "abstraction",
+    "elastic",
+    "logger-redis",
+    "logger-firerose",
+    "console",
+    "logger-console"
+  ],
   "devDependencies": {
     "@types/chai": "^4.1.6",
     "@types/mocha": "^5.2.6",
