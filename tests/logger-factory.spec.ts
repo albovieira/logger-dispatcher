@@ -33,7 +33,7 @@ describe('Unit tests for LoggerFactory', () => {
       level: 'verbose',
       container: 'container-name',
       environment: 'homologation',
-      host: 'redis-hmg.com.br',
+      host: 'localhost',
       port: '6379'
     });
     const loggerType = logger.transports[1].name;

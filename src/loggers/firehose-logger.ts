@@ -2,6 +2,7 @@ import * as winston from 'winston';
 import WinstonFirehose from 'winston-firehose';
 import AbstractLogger from './abstract-logger';
 import { FirehoseConfig } from '../models/firehose-config';
+import { LoggerContract } from '../models/logger-contract';
 
 export default class FirehoseLogger extends AbstractLogger {
   private config: FirehoseConfig;

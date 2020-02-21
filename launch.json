@@ -1,7 +1,6 @@
 {
     "version": "0.2.0",
-    "configurations": [
-        {
+    "configurations": [{
             "type": "node",
             "request": "launch",
             "name": "Mocha Tests",
@@ -11,7 +10,7 @@
                 "-u", "tdd",
                 "--timeout", "999999",
                 "--colors", "--recursive",
-                "${workspaceFolder}/tests/unit/setup.ts"
+                "${workspaceFolder}/tests/setup.ts"
             ],
             "internalConsoleOptions": "openOnSessionStart"
         }

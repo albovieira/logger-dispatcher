@@ -1,8 +1,8 @@
 import * as winston from 'winston';
-import { LoggerClass } from '../models/logger-class';
+import { LoggerContract } from '../models/logger-contract';
 import { LoggerLevels } from '../models/logger-levels';
 
-export default abstract class AbstractLogger implements LoggerClass {
+export default abstract class AbstractLogger {
   getLoggerInstance(level?: string): winston.Logger {
     const logger = winston.createLogger({
       level: level || LoggerLevels.info,

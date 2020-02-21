@@ -1,8 +1,10 @@
-import { ConfigProvider } from './models/config-provider';
+import { Provider } from './models/provider';
 import { Config } from './models/config';
 import RedisLogger from './loggers/redis-logger';
 import FirehoseLogger from './loggers/firehose-logger';
 import ConsoleLogger from './loggers/console-logger';
+import AbstractLogger from './loggers/abstract-logger';
+import { Logger } from 'winston';
 
 export interface ConfigProvider {
   name: string;
@@ -17,18 +19,18 @@ export enum LoggerTypes {
 }
 
 export class LoggerFactory {
-  static create(loggerType: string, config: Config) {
-    const logProviders: ConfigProvider[] = [
+  static create(loggerType: string, config: Config): Logger {
+    const logProviders: Provider[] = [
       { type: LoggerTypes.REDIS, class: RedisLogger },
       { type: LoggerTypes.FIREHOSE, class: FirehoseLogger }
     ];
 
-    const defaultProvider: ConfigProvider = {
+    const defaultProvider: Provider = {
       type: LoggerTypes.CONSOLE,
       class: ConsoleLogger
     };
 
-    const provider: ConfigProvider =
+    const provider: Provider =
       logProviders.find(p => p.type === loggerType) || defaultProvider;
 
     try {
@@ -36,7 +38,9 @@ export class LoggerFactory {
       const logger = new provider.class(config).getLoggerInstance(level);
       return logger;
     } catch (error) {
-      console.error(`Cannot add Winston transport to logger: ${error.message}`);
+      console.error(
+        `Can not add Winston transport to logger: ${error.message}`
+      );
     }
   }
 }

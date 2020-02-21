@@ -2,6 +2,7 @@ import * as winston from 'winston';
 import WinstonRedis from 'winston-redis';
 import { RedisConfig } from '../models/redis-config';
 import AbstractLogger from './abstract-logger';
+import { LoggerContract } from '../models/logger-contract';
 
 export default class RedisLogger extends AbstractLogger {
   private config: RedisConfig;
