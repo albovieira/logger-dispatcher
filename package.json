@@ -1,6 +1,6 @@
 {
   "name": "logger-dispatcher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is an abstraction for winston logger, with this package we can just inform the transporter and it will provide a winston instance configured",
   "main": "index.js",
   "scripts": {

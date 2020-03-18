@@ -1,15 +1,16 @@
+import { Logger } from 'winston';
 import { Provider } from './models/provider';
-import { Config } from './models/config';
 import RedisLogger from './loggers/redis-logger';
 import FirehoseLogger from './loggers/firehose-logger';
 import ConsoleLogger from './loggers/console-logger';
-import AbstractLogger from './loggers/abstract-logger';
-import { Logger } from 'winston';
+import { RedisConfig } from './models/redis-config';
+import { FirehoseConfig } from './models/firehose-config';
+import { Config } from './models/config';
 
 export interface ConfigProvider {
   name: string;
   enabled: boolean;
-  config?: Object;
+  config?: RedisConfig | FirehoseConfig | Config;
 }
 
 export enum LoggerTypes {
