@@ -40,4 +40,16 @@ describe('Unit tests for LoggerFactory', () => {
     expect(loggerType).eq('redis');
     expect(logger.level).eq('verbose');
   });
+
+  it.only('Should create elastic logger', () => {
+    const logger = factory.create('elastic', {
+      level: 'verbose',
+      clientOpts: {
+        node: 'http://localhost:9200'
+      }
+    });
+    const loggerType = logger.transports[1].name;
+    expect(loggerType).eq('elasticsearch');
+    expect(logger.level).eq('verbose');
+  });
 });

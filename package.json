@@ -43,7 +43,8 @@
   "dependencies": {
     "redis": "^2.8.0",
     "reflect-metadata": "^0.1.13",
-    "winston": "^3.1.0",
+    "winston": "^3.2.1",
+    "winston-elasticsearch": "^0.8.8",
     "winston-firehose": "^2.0.1",
     "winston-kinesis-transport": "0.0.2",
     "winston-redis": "^3.0.0"
