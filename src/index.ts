@@ -7,11 +7,12 @@ import { RedisConfig } from './models/redis-config';
 import { FirehoseConfig } from './models/firehose-config';
 import { Config } from './models/config';
 import ElasticLogger from './loggers/elastic-logger';
+import { ElasticConfig } from './models/elastic-config';
 
 export interface ConfigProvider {
   name: string;
   enabled: boolean;
-  config?: RedisConfig | FirehoseConfig | Config;
+  config?: RedisConfig | FirehoseConfig | ElasticConfig | Config;
 }
 
 export enum LoggerTypes {
