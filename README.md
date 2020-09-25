@@ -63,6 +63,17 @@ const logger = factory.create('redis', {
 });
 ```
 
+### Elastic
+
+```javascript
+const logger = factory.create('redis', {
+  level: 'verbose',
+  clientOpts: {
+      node: 'http://localhost:9200'
+  }
+});
+```
+
 ## Features
 
 ## License
