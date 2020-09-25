@@ -63,7 +63,7 @@ const logger = factory.create('redis', {
 });
 ```
 
-### Elastic
+#### Elastic
 
 ```javascript
 const logger = factory.create('redis', {
